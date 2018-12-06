@@ -131,14 +131,16 @@ Page({
       },
       fail: err=>{
         wx.showToast({
-          title: 'Fail',
+          icon: 'none',
+          title: 'Fail'
         })
       }
     })
     }
     else{
       wx.showToast({
-        title: 'Need a valid entry.',
+        icon: 'loading',
+        title: 'Entry Invalid'
       })
     }
   }
