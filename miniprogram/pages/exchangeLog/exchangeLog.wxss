@@ -1,0 +1,47 @@
+/* miniprogram/pages/exchangeLog/exchangeLog.wxss */
+
+@import "../../style/guide.wxss";
+
+.cards{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  height: 300rpx;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  flex-direction: row;
+  align-items: flex-start;
+  transition: all 300ms ease;
+  padding: 25rpx 0 0 50rpx;
+}
+
+.highlights {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #666;
+}
+
+.title{
+  font-size: 45rpx;
+  line-height: 50rpx;
+  color: rgb(53,53,53);
+}
+
+.scroll{
+  border-block-end-style: dashed;
+}
+
+.options{
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.button{
+  margin-top: 10rpx;
+  border-radius: 4rpx;
+}

@@ -1,0 +1,24 @@
+<!--miniprogram/pages/pageOne/pageOne.wxml-->
+<view class="container">
+  <text class="headline">选择式神</text>
+  <picker class="picker" mode="selector" range="{{names}}" bindchange="onQuery">
+        <text class="picker-text">当前选择: <text wx:if="{{name!=Null}}">{{name}}</text></text>
+    </picker>
+
+  <view class="guide">
+    <text class="headline">输入增加值</text>
+    <input class="request_text" type="number" value="{{atk}}" placeholder="攻击" bindinput="setAtk"/>
+    <input class="request_text" type="number" value="{{critDmg}}" placeholder="暴伤(%)" bindinput="setCrit"/>
+  </view>
+  <div class="nav">
+    <button class="next" size="mini" type="default" bindtap="calculate">Go</button>
+  </div>
+  <view class="guide">
+    <text class="headline">结果显示</text>
+    <view class="guide" wx:if="{{ttl>0}}">
+      <text class="p">攻击*暴伤 = <text style="color:{{color}}">{{ttl}}</text></text>
+      <text class="p"></text>
+    </view>
+  </view>
+  
+</view>
