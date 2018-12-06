@@ -1,20 +1,21 @@
 <!--miniprogram/pages/pageAdd/pageAdd.wxml-->
-<view class="page">
-  <form>
-    <text class='p'>Player Name</text><input class="request_text" type="text" placeholder="input name plz" bindinput="onInputName"/> 
-    <view class='line-view'></view>
-    <text class="p">Add more info here</text>
-    <picker class="picker" mode="selector" range="{{items}}" bindchange="onSet">
-        <text class="picker-text">当前选择: <text wx:if="{{currItem!=Null}}">{{currItem}}</text></text>
-    </picker>
-    <input class="request_text" type="number" value="{{atk}}" placeholder="input number plz" bindblur='onInput'/>
-    <button class="button" type="primary" bindtap="onAdd">Add Record</button>
-  </form>
-  <text class="headline">Records already added:</text>
-  <scroll-view class="scroll" scroll-y style="height: 200px">
-    <text class="p">{{currRecord.id}}:{{currRecord.num}}</text>
-    <view wx:for="{{records}}">
-      <text class="p">{{item.id}}: {{item.num}}</text>
-    </view>
-  </scroll-view>
+<view class="container">
+  <view class="guide">
+    <form class="scroll">
+      <text class='p'>Player Name</text><input class="request_text" type="text" placeholder="input name plz" bindinput="onInputName"/> 
+      <view class='line-view'></view>
+      <text class="p">Add more info here</text>
+      <picker class="picker" mode="selector" range="{{items}}" bindchange="onSet">
+          <text class="picker-text">当前选择: <text wx:if="{{currItem!=Null}}">{{currItem}}</text></text>
+      </picker>
+      <input class="request_text" type="number" value="{{atk}}" placeholder="input number plz" bindblur='onInput'/>
+      <button class="button" type="primary" bindtap="onAdd">Add Record</button>
+    </form>
+    <text class="headline">Records already added:</text>
+    <scroll-view class="scroll" scroll-y style="height: 200px">
+      <view wx:for="{{records}}">
+        <text class="p">{{item.id}}: {{item.num}}</text>
+      </view>
+    </scroll-view>
+  </view>
 </view>

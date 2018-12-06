@@ -1,5 +1,5 @@
 <!--miniprogram/pages/exchangeLog/exchangeLog.wxml-->
-<view class="page">
+<view>
   <scroll-view class="scroll" scroll-y style="height: 500px" enable-back-to-top>
     <view wx:for="{{all_data}}" wx:for-item="player">
       <view class='cards'>
