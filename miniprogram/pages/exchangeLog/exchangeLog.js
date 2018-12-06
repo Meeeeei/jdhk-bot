@@ -19,9 +19,11 @@ Page({
         name: 'Player2',
         records: [{ id: 'c', num: 32 },
         { id: 'v', num: 3 },
-        { id: 'b', num: 6 }]
+        { id: 'b', num: 6 },
+        { id: 'd', num: 4}]
       }
-     ]
+     ],
+     boxHeight: 20
   },
 
   /**
@@ -30,19 +32,30 @@ Page({
   onLoad: function (options) {
     // dataBase.get().then(
     //   res => {
-    //     // console.log(res.data)
+    //     console.log(res.data)
     //     this.setData({
     //       all_data: res.data
     //     })
     //   }
     // )
+    var temp= this.data.boxHeight
+    wx.getSystemInfo({
+      success: function (res) {
+        temp = res.windowHeight-120
+        console.log(temp)
+      }
+    })
+    this.setData({
+      boxHeight: temp
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
+    console.log(this.data.boxHeight)
   },
 
   /**

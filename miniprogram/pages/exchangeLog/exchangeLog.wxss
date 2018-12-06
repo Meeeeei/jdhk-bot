@@ -31,8 +31,9 @@
   color: rgb(53,53,53);
 }
 
-.scroll{
+.scroll-box{
   border-block-end-style: dashed;
+  box-sizing: border-box;
 }
 
 .options{
@@ -42,6 +43,6 @@
 }
 
 .button{
-  margin-top: 10rpx;
+
   border-radius: 4rpx;
 }

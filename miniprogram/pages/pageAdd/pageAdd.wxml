@@ -9,13 +9,14 @@
           <text class="picker-text">当前选择: <text wx:if="{{currItem!=Null}}">{{currItem}}</text></text>
       </picker>
       <input class="request_text" type="number" value="{{atk}}" placeholder="input number plz" bindblur='onInput'/>
-      <button class="button" type="primary" bindtap="onAdd">Add Record</button>
+      <button class="button" size="mini" type="default" style="float: right" bindtap="onAdd">Add Record</button>
     </form>
     <text class="headline">Records already added:</text>
-    <scroll-view class="scroll" scroll-y style="height: 200px">
+    <scroll-view class="scroll" scroll-y style="height: {{boxHeight}}px">
       <view wx:for="{{records}}">
         <text class="p">{{item.id}}: {{item.num}}</text>
       </view>
     </scroll-view>
+    <button class="button" size="mini" type="primary" style="float: center" bindtap="onSubmit">Submit</button>
   </view>
 </view>

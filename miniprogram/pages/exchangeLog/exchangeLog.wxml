@@ -1,6 +1,6 @@
 <!--miniprogram/pages/exchangeLog/exchangeLog.wxml-->
 <view>
-  <scroll-view class="scroll" scroll-y style="height: 500px" enable-back-to-top>
+  <scroll-view class="scroll-box" style="  height: {{boxHeight}}px" scroll-y enable-back-to-top>
     <view wx:for="{{all_data}}" wx:for-item="player">
       <view class='cards'>
           <text class='title'>{{player.name}}</text>
@@ -11,7 +11,7 @@
           <view wx:for="{{[0,1,2]}}">
               <text class='highlights'>{{player.records[item].id}}: {{player.records[item].num}}</text>
           </view>
-          <text class='highlights'>...</text>
+          <text wx:if="{{player.records.length>3}}" class='highlights'>...</text>
       </view>
     </view>
   </scroll-view>

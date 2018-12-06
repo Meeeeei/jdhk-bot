@@ -1,6 +1,7 @@
 // miniprogram/pages/pageAdd/pageAdd.js
 const db = wx.cloud.database()
 const item_list = db.collection('items')
+const save_path = db.collection('pieces')
 
 Page({
 
@@ -9,10 +10,11 @@ Page({
    */
   data: {
     name: '',
-    records:[{id: 'item0', num: 0}],
+    records:[],
     items: [],
     currItem: '',
-    currRecord:{id:'', num: 0}
+    currRecord:{id:'', num: 0},
+    boxHeight: 0
   },
 
   /**
@@ -28,6 +30,16 @@ Page({
         this.setData({items: temp})
       }
     )
+    var temp = this.data.boxHeight
+    wx.getSystemInfo({
+      success: function (res) {
+        temp = parseInt(res.windowHeight*0.4)
+        console.log(temp)
+      }
+    })
+    this.setData({
+      boxHeight: temp
+    })
   },
 
   /**
@@ -103,5 +115,31 @@ Page({
     this.setData({
       records: temp
     })
+  },
+
+  onSubmit: function(){
+    if (this.data.name!='' && this.data.records.length>0){
+    save_path.add({
+      data:{
+        name: this.data.name,
+        records: this.data.records
+      },
+      success: res=>{
+        wx.showToast({
+          title: 'Success'
+        })
+      },
+      fail: err=>{
+        wx.showToast({
+          title: 'Fail',
+        })
+      }
+    })
+    }
+    else{
+      wx.showToast({
+        title: 'Need a valid entry.',
+      })
+    }
   }
 })
