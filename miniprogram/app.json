@@ -10,7 +10,8 @@
     "pages/pageOne/pageOne",
     "pages/calendar/calendar",
     "pages/exchangeLog/exchangeLog",
-    "pages/pageAdd/pageAdd"
+    "pages/pageAdd/pageAdd",
+    "pages/cardDisplay/cardDisplay"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

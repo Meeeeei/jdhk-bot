@@ -1,0 +1,10 @@
+<!--miniprogram/pages/cardDisplay/cardDisplay.wxml-->
+<view class="container">
+  <view class="guide">
+    <text class="headline">{{name}}</text>
+    <view class="line-view"/>
+    <view wx:for="{{records}}">
+      <text class="p">{{item.id}}:{{item.num}}</text>
+    </view>
+  </view>
+</view>

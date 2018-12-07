@@ -30,19 +30,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // dataBase.get().then(
-    //   res => {
-    //     console.log(res.data)
-    //     this.setData({
-    //       all_data: res.data
-    //     })
-    //   }
-    // )
+    dataBase.get().then(
+      res => {
+        // console.log(res.data)
+        this.setData({
+          all_data: res.data
+        })
+      }
+    )
     var temp= this.data.boxHeight
     wx.getSystemInfo({
       success: function (res) {
         temp = res.windowHeight-120
-        console.log(temp)
       }
     })
     this.setData({
@@ -54,8 +53,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-    console.log(this.data.boxHeight)
+
   },
 
   /**
@@ -120,7 +118,7 @@ Page({
   },
 
   onAdd: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../pageAdd/pageAdd"
     })
   }

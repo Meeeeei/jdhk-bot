@@ -6,9 +6,9 @@
       <view class='line-view'></view>
       <text class="p">Add more info here</text>
       <picker class="picker" mode="selector" range="{{items}}" bindchange="onSet">
-          <text class="picker-text">当前选择: <text wx:if="{{currItem!=Null}}">{{currItem}}</text></text>
+          <text class="picker-text">当前选择: {{currItem}}</text>
       </picker>
-      <input class="request_text" type="number" value="{{atk}}" placeholder="input number plz" bindblur='onInput'/>
+      <input class="request_text" type="number" value="{{currNum}}" placeholder="input number plz" bindblur='onInput'/>
       <button class="button" size="mini" type="default" style="float: right" bindtap="onAdd">Add Record</button>
     </form>
     <text class="headline">Records already added:</text>

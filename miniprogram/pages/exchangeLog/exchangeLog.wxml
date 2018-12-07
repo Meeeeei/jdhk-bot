@@ -2,17 +2,19 @@
 <view>
   <scroll-view class="scroll-box" style="  height: {{boxHeight}}px" scroll-y enable-back-to-top>
     <view wx:for="{{all_data}}" wx:for-item="player">
-      <view class='cards'>
-          <text class='title'>{{player.name}}</text>
-          <!-- <view wx:for="{{player.records}}">
-              <text class='highlights'>{{item.id}}: {{item.num}}</text>
-          </view> -->
-          <!-- above provides full vision of the data, below provides truncated version -->
-          <view wx:for="{{[0,1,2]}}">
-              <text class='highlights'>{{player.records[item].id}}: {{player.records[item].num}}</text>
-          </view>
-          <text wx:if="{{player.records.length>3}}" class='highlights'>...</text>
-      </view>
+      <navigator url="../cardDisplay/cardDisplay?id={{player._id}}" hover-class='none'>
+        <view class='cards'>
+            <text class='title'>{{player.name}}</text>
+            <!-- <view wx:for="{{player.records}}">
+                <text class='highlights'>{{item.id}}: {{item.num}}</text>
+            </view> -->
+            <!-- above provides full vision of the data, below provides truncated version -->
+            <view wx:for="{{[0,1,2]}}">
+                <text class='highlights'>{{player.records[item].id}}: {{player.records[item].num}}</text>
+            </view>
+            <text wx:if="{{player.records.length>3}}" class='highlights'>...</text>
+        </view>
+      </navigator>
     </view>
   </scroll-view>
   <view class="options">

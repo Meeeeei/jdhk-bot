@@ -14,7 +14,8 @@ Page({
     items: [],
     currItem: '',
     currRecord:{id:'', num: 0},
-    boxHeight: 0
+    boxHeight: 0,
+    currNum: 0
   },
 
   /**
@@ -34,7 +35,6 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         temp = parseInt(res.windowHeight*0.4)
-        console.log(temp)
       }
     })
     this.setData({
@@ -67,7 +67,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.navigateTo({
+      url: "../exchangeLog/exchangeLog"
+    })
   },
 
   /**
@@ -103,6 +105,7 @@ Page({
 
   onInput: function(e){
     this.setData({
+      currNum: Number(e.detail.value),
       currRecord: {id:this.data.currItem, num: Number(e.detail.value)}
     })
     
@@ -113,8 +116,11 @@ Page({
     var temp = this.data.records
     temp.push(this.data.currRecord)
     this.setData({
-      records: temp
+      records: temp,
+      currItem: '',
+      currNum: ''
     })
+    
   },
 
   onSubmit: function(){
